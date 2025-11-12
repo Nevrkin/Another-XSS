@@ -319,12 +319,12 @@
             </div>
             <div class="elite-section-content">
               <div class="elite-checkbox-grid">
-                ${Object.keys(CONFIG.VECTORS).map(v => `
-                  <label class="elite-checkbox-label">
-                    <input type="checkbox" class="elite-checkbox" data-vector="${v.toLowerCase()}" ${CONFIG.VECTORS[v] ? 'checked' : ''}>
-                    <span class="checkbox-text">${v}</span>
-                  </label>
-                `).join('')}
+                ${Object.keys(CONFIG.VECTORS).map(v => 
+                  '<label class="elite-checkbox-label">' +
+                    '<input type="checkbox" class="elite-checkbox" data-vector="' + v.toLowerCase() + '" ' + (CONFIG.VECTORS[v] ? 'checked' : '') + '>' +
+                    '<span class="checkbox-text">' + v + '</span>' +
+                  '</label>'
+                ).join('')}
               </div>
             </div>
           </div>
