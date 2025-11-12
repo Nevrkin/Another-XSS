@@ -277,7 +277,18 @@
       console.log('[Elite] Dashboard created. Press Ctrl+Shift+E to toggle');
     }
 
+    generateVectorCheckboxes() {
+      return Object.keys(CONFIG.VECTORS).map(v => {
+        const checked = CONFIG.VECTORS[v] ? 'checked' : '';
+        return `<label class="elite-checkbox-label">
+                  <input type="checkbox" class="elite-checkbox" data-vector="${v.toLowerCase()}" ${checked}>
+                  <span class="checkbox-text">${v}</span>
+                </label>`;
+      }).join('');
+    }
+
     getHTML() {
+      const vectorCheckboxes = this.generateVectorCheckboxes();
       return `
         <div class="elite-header">
           <div class="elite-title">
@@ -319,12 +330,7 @@
             </div>
             <div class="elite-section-content">
               <div class="elite-checkbox-grid">
-                ${Object.keys(CONFIG.VECTORS).map(v => 
-                  '<label class="elite-checkbox-label">' +
-                    '<input type="checkbox" class="elite-checkbox" data-vector="' + v.toLowerCase() + '" ' + (CONFIG.VECTORS[v] ? 'checked' : '') + '>' +
-                    '<span class="checkbox-text">' + v + '</span>' +
-                  '</label>'
-                ).join('')}
+                ${vectorCheckboxes}
               </div>
             </div>
           </div>
